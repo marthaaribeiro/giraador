@@ -29,7 +29,7 @@ if (formAcc) {
 
 
 
-// Lista de participantes com grupo, nome e foto
+// Lista de cards
 const participantes = [
     { nome: "Sakura", grupo: "LE SSERAFIM", foto: "imagens/lesserafim.sakura.jpg" },
     { nome: "Chaewon", grupo: "LE SSERAFIM", foto: "imagens/lesserafim.chaewon.jpg" },
@@ -54,10 +54,7 @@ const participantes = [
 ];
 
 // Guarda qual grupo está sendo visualizado (null = tela de grupos)
-// Precisa ficar FORA das funções, senão é resetada toda vez que renderiza
 let grupoSelecionado = null;
-
-
  
 // Capas dos grupos 
 const capasGrupos = {
@@ -67,7 +64,7 @@ const capasGrupos = {
     "aespa": "imagens/aespa.jpeg"
 };
  
-// Função que o botão do HTML vai chamar
+// Função do HTML
 function sortear() {
     const indiceAleatorio = Math.floor(Math.random() * participantes.length);
     const ganhador = participantes[indiceAleatorio];
@@ -85,7 +82,7 @@ function salvarNaColecao(ganhador) {
     localStorage.setItem('colecao', JSON.stringify(colecao));
 }
  
-// Agrupa os cards salvos por grupo, e dentro de cada grupo conta repetições por membro
+// Agrupa os cards por grupo
 function agruparEContar(cards) {
     const porGrupo = {};
  
@@ -118,7 +115,7 @@ function renderizarColecao() {
     }
 }
  
-// Tela 1: mostra uma "capa" clicável para cada grupo que já tem cartas
+// Mostra uma capa clicável para cada grupo que já tem cartas
 function renderizarListaDeGrupos(porGrupo, container) {
     const grid = document.createElement("div");
     grid.className = "grid-grupos";
@@ -145,7 +142,7 @@ function renderizarListaDeGrupos(porGrupo, container) {
     container.appendChild(grid);
 }
  
-// Tela 2: mostra os cards de membros só daquele grupo, com botão de voltar
+// Mostra os cards de membros só daquele grupo, com botão de voltar
 function renderizarCardsDoGrupo(porGrupo, nomeGrupo, container) {
     const voltar = document.createElement("button");
     voltar.textContent = "← Voltar";
