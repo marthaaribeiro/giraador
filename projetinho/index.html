@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
+    <title>gira a dor</title>
+</head>
+
+<body>
+    <header id="top">
+        <div id="acc">
+         <button class="textos-topo"> login/criar conta</button>
+             <form id="creat-acc">
+                 <label for="nome-user">nome</label>
+                 <input type="text" id="nome-user" required>
+
+                 <label for="email">email</label>
+                 <input type="email" id="email" required>
+
+                 <label for="senha">senha</label>
+                 <input type="password" id="senha" required>
+
+                 <button type="submit">creat account</button>
+             </form>
+        </div>
+        <p class="textos-topo">minha conta</p>
+        <p class="textos-topo"> <a href="minhacolecao.html"> minha coleção </a></p>
+    </header>
+
+    <section> 
+        <h1 id="nome-jogo">bem-vindo ao gira a dor</h1>
+    </section>
+
+    <div id="caixa-botoes">
+         <img id="foto-ganhador" src="imagens/lesserafim.sakura.jpg" alt="Foto do vencedor" width="200">
+          <h2 id="nome-ganhador"></h2>
+         <button class="botoes-estilo" onclick="sortear()">girar</button>
+    </div>
+     
+
+   <footer class="footer">
+        <p class="footer">footer</p>
+    </footer>
+
+    <script src="server.js"></script>
+</body>
+</html>
